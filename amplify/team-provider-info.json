@@ -13,7 +13,13 @@
     },
     "categories": {
       "function": {
-        "todoApiGetAll": {}
+        "todoApiGetAll": {
+          "deploymentBucketName": "amplify-todoibcaws-dev-161216-deployment",
+          "s3Key": "amplify-builds/todoApiGetAll-516a6a5556386d674b4e-build.zip"
+        }
+      },
+      "api": {
+        "todoApi": {}
       }
     }
   }
