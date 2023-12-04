@@ -10,6 +10,11 @@
       "StackName": "amplify-todoibcaws-dev-161216",
       "StackId": "arn:aws:cloudformation:eu-west-1:699818061938:stack/amplify-todoibcaws-dev-161216/9d41cdf0-92b7-11ee-9c23-025bfff288df",
       "AmplifyAppId": "dkqfcnjpprm3t"
+    },
+    "categories": {
+      "function": {
+        "todoApiGetAll": {}
+      }
     }
   }
 }
