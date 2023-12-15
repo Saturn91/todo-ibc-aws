@@ -24,6 +24,9 @@
       },
       "api": {
         "todoApi": {}
+      },
+      "auth": {
+        "todoibcaws9b2ff1e2": {}
       }
     }
   }

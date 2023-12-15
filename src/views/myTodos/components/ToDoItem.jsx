@@ -42,7 +42,9 @@ const ToDoItem = ({ todo }) => {
     height: "24px",
     color: "white",
     marginLeft: "8px",
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    textAlign: "center",
+    lineHeight: "5px"
   }
 
   return (
