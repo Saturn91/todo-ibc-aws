@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
+import TodoContext from '../contexts/ToDoContext';
+import { useTodos } from '../hooks.js/useTodos';
 
 const AddToDoForm = () => {
   const [description, setDescription] = useState('');
+  const [formError, setFormError] = useState();
+  const [loading, setLoading] = useState(false)
+  const {addToDo} = useTodos();
+  const { setContextValue } = useContext(TodoContext);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true)
+
     // Here you would typically handle adding the new todo
-    console.log('Adding ToDo:', description);
-    setDescription(''); // Reset the input field after submission
+    const {todos, error} = await addToDo(description);
+    
+    error && setFormError("failed with " + error.message || "unknown error")
+
+    if(todos &! error) {
+      setDescription(''); // Reset the input field after submission
+      setFormError();
+      setContextValue(todos);
+    }
+
+    setLoading(false);
   };
 
   const cardStyle = {
@@ -28,6 +45,11 @@ const AddToDoForm = () => {
     boxSizing: 'border-box'
   };
 
+  const errorStyle = {
+    fontSize: "12px",
+    color:"red"
+  }
+
   const buttonStyle = {
     width: '100%',
     padding: '10px',
@@ -46,9 +68,11 @@ const AddToDoForm = () => {
           value={description} 
           onChange={(e) => setDescription(e.target.value)} 
           placeholder="Add new todo..." 
-          style={inputStyle} 
+          style={inputStyle}
+          required
         />
-        <button type="submit" style={buttonStyle}>
+        {formError && <p style={errorStyle}>{formError}</p>}
+        <button type="submit" style={buttonStyle} disabled={loading}>
           Add ToDo
         </button>
       </form>
