@@ -22,13 +22,15 @@ const MyTodoView = () => {
     <TodoContext.Provider
       value={{ todoContext: todos, setToDoContext: setToDos }}
     >
-      {loading ? "...loading":
-        <>
-          <ToDoList todos={todos}></ToDoList>
-          <ToDoList todos={todos} done></ToDoList>
-        </>        
-      }
-      
+      <section>
+        <h1>Your ToDos</h1>
+        {loading ? "...loading":
+          <>
+            <ToDoList todos={todos}></ToDoList>
+            <ToDoList todos={todos} done></ToDoList>
+          </>        
+        }
+      </section>      
     </TodoContext.Provider>
   );
 };
