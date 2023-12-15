@@ -15,7 +15,7 @@
       "function": {
         "todoApiGetAll": {
           "deploymentBucketName": "amplify-todoibcaws-dev-161216-deployment",
-          "s3Key": "amplify-builds/todoApiGetAll-514f516c6c784c44447a-build.zip"
+          "s3Key": "amplify-builds/todoApiGetAll-78514532663669774e33-build.zip"
         },
         "addNewTodo": {
           "deploymentBucketName": "amplify-todoibcaws-dev-161216-deployment",
