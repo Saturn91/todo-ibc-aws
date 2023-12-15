@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import AddToDoForm from "./components/AddToDoForm";
 import ToDoList from "./components/ToDoList";
 import { useTodos } from "./hooks.js/useTodos";
 
@@ -23,7 +24,8 @@ const MyTodoView = () => {
       value={{ todoContext: todos, setToDoContext: setToDos }}
     >
       <section>
-        <h1>Your ToDos</h1>
+        <h1>Organize your Tasks</h1>
+        <AddToDoForm />
         {loading ? "...loading":
           <>
             <ToDoList todos={todos}></ToDoList>
