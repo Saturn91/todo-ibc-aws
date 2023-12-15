@@ -78,3 +78,7 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+#environmentvars:
+.env.dev
+.env.prod
