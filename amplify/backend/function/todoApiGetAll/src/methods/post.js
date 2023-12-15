@@ -1,7 +1,4 @@
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
-exports.handler = async (event) => {
+const post = (event) => {
   let description;
 
   if (event.httpMethod !== "POST") {
@@ -55,3 +52,5 @@ exports.handler = async (event) => {
     ]),
   };
 };
+
+module.exports = post;

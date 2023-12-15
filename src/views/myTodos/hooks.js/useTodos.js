@@ -9,7 +9,7 @@ export const useTodos = () => {
   };
 
   const addToDo = async (description) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/create`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

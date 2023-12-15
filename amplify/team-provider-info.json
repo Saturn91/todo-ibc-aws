@@ -9,17 +9,14 @@
       "UnauthRoleName": "amplify-todoibcaws-dev-161216-unauthRole",
       "StackName": "amplify-todoibcaws-dev-161216",
       "StackId": "arn:aws:cloudformation:eu-west-1:699818061938:stack/amplify-todoibcaws-dev-161216/9d41cdf0-92b7-11ee-9c23-025bfff288df",
-      "AmplifyAppId": "dkqfcnjpprm3t"
+      "AmplifyAppId": "dkqfcnjpprm3t",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-todoibcaws-dev-161216-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
         "todoApiGetAll": {
           "deploymentBucketName": "amplify-todoibcaws-dev-161216-deployment",
-          "s3Key": "amplify-builds/todoApiGetAll-78514532663669774e33-build.zip"
-        },
-        "addNewTodo": {
-          "deploymentBucketName": "amplify-todoibcaws-dev-161216-deployment",
-          "s3Key": "amplify-builds/addNewTodo-4337676e534274314c67-build.zip"
+          "s3Key": "amplify-builds/todoApiGetAll-6d35624b764b5a697242-build.zip"
         }
       },
       "api": {
@@ -27,6 +24,9 @@
       },
       "auth": {
         "todoibcaws9b2ff1e2": {}
+      },
+      "storage": {
+        "todoDatabase": {}
       }
     }
   }

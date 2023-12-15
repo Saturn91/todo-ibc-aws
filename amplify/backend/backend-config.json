@@ -8,14 +8,6 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "addNewTodo"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
           "resourceName": "todoApiGetAll"
         }
       ],
@@ -52,11 +44,6 @@
     }
   },
   "function": {
-    "addNewTodo": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "todoApiGetAll": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -64,22 +51,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_addNewTodo_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addNewTodo"
-        }
-      ]
-    },
-    "AMPLIFY_function_addNewTodo_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addNewTodo"
-        }
-      ]
-    },
     "AMPLIFY_function_todoApiGetAll_deploymentBucketName": {
       "usedBy": [
         {
@@ -95,6 +66,12 @@
           "resourceName": "todoApiGetAll"
         }
       ]
+    }
+  },
+  "storage": {
+    "todoDatabase": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

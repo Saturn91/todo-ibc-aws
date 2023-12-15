@@ -1,18 +1,17 @@
 {
   "version": 1,
   "paths": {
-    "/create": {
-      "name": "/create",
-      "lambdaFunction": "addNewTodo",
-      "permissions": {
-        "setting": "open"
-      }
-    },
     "/todos": {
       "name": "/todos",
       "lambdaFunction": "todoApiGetAll",
       "permissions": {
-        "setting": "open"
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
       }
     }
   }
