@@ -7,7 +7,7 @@ const AddToDoForm = () => {
   const [formError, setFormError] = useState();
   const [loading, setLoading] = useState(false)
   const {addToDo} = useTodos();
-  const { setContextValue } = useContext(TodoContext);
+  const { setToDoContext } = useContext(TodoContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,10 +18,11 @@ const AddToDoForm = () => {
     
     error && setFormError("failed with " + error.message || "unknown error")
 
-    if(todos &! error) {
+    if(! error) {
       setDescription(''); // Reset the input field after submission
       setFormError();
-      setContextValue(todos);
+      console.log(todos);
+      setToDoContext(todos);
     }
 
     setLoading(false);

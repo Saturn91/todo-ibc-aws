@@ -11,15 +11,18 @@ export const useTodos = () => {
   };
 
   const addToDo = async (description) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/create`, {
       method: "POST",
-      body: JSON.stringify({
-        description,
-        done: false,
-      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ description, done: false }),
     });
 
-    if (response.ok) return { todos: await response.json() };
+    if (response.ok) {
+      const todos = await response.json();
+      return { todos };
+    }
     return { error: response };
   };
 
