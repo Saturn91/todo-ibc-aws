@@ -1,25 +1,35 @@
+import { get, post, del, patch } from "aws-amplify/api";
+
 export const useTodos = () => {
   const load = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
-      method: "GET",
+    const apiAction = get({
+      apiName: "todoApi",
+      path: "/todos",
     });
 
-    if (response.ok) return { todos: await response.json() };
+    const response = await apiAction.response;
+
+    if (response.statusCode == 200)
+      return { todos: await response.body.json() };
     return { error: response.code };
   };
 
   const addToDo = async (description) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const apiAction = post({
+      apiName: "todoApi",
+      path: "/todos",
+      options: {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ description, done: false }),
       },
-      body: JSON.stringify({ description, done: false }),
     });
 
-    if (response.ok) {
-      const todos = await response.json();
-      return { todos };
+    const response = await apiAction.response;
+
+    if (response.statusCode == 200) {
+      return { todos: await response.body.json() };
     }
     return { error: response };
   };
