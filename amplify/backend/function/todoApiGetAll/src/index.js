@@ -10,6 +10,17 @@ exports.handler = async (event) => {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "*",
     },
-    body: JSON.stringify("Hello from Lambda!"),
+    body: JSON.stringify([
+      {
+        id: 1,
+        description: "make fun of rust developers",
+        done: true,
+      },
+      {
+        id: 2,
+        description: "get ready for the responses",
+        done: false,
+      },
+    ]),
   };
 };
